@@ -252,6 +252,19 @@ SEMICOLON = ";"
 *   **Purpose:** To take the token stream and build an Abstract Syntax Tree (AST).
 *   **Technique:** Implement a top-down recursive descent parser. A Pratt parser will be used to handle operator precedence.
 *   **Error Handling:** Provide clear, informative error messages for syntax errors, including line and column numbers.
+*   **AST Nodes to Implement:** The parser will need to generate the following concrete AST node classes in `dessa/ast.py`:
+    *   `LetStatement(Statement)`: For a `let` statement (e.g., `let x = 5;`). Will contain the identifier and the expression.
+    *   `ReturnStatement(Statement)`: For a `return` statement.
+    *   `ExpressionStatement(Statement)`: For a standalone expression (e.g., `x + 5;`).
+    *   `Identifier(Expression)`: For an identifier (e.g., `x`).
+    *   `IntegerLiteral(Expression)`: For an integer literal (e.g., `5`).
+    *   `Boolean(Expression)`: For `true` or `false`.
+    *   `PrefixExpression(Expression)`: For prefix operators (e.g., `!true` or `-15`).
+    *   `InfixExpression(Expression)`: For infix operators (e.g., `5 + 5`).
+    *   `BlockStatement(Statement)`: For a block of statements enclosed in `{}`.
+    *   `IfExpression(Expression)`: For an `if/else` expression.
+    *   `FunctionLiteral(Expression)`: For a function definition (`fn(x, y) { ... }`).
+    *   `CallExpression(Expression)`: For a function call (e.g., `add(2, 3)`).
 *   **Testing:** Write unit tests to ensure the parser correctly builds the AST for valid sequences of tokens and reports errors for invalid sequences.
 
 ## Phase 3: The Evaluator (or Interpreter)
@@ -293,5 +306,5 @@ Once the core feature set is complete and tested, we can extend "dessa" with mor
     *   **Operations:** Support for element access via index. Example: `my_array[0]`.
 
 *   **Hash Map Data Type:**
-    *   **Syntax:** Support for hash literals with key-value pairs. Example: `let my_hash = {"name": "Dessa", "age": 5};`
+    *   **Syntax:** Support for hash literals with key-value-pairs. Example: `let my_hash = {"name": "Dessa", "age": 5};`
     *   **Operations:** Support for element access via key. Example: `my_hash["name"]`.
