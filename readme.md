@@ -28,7 +28,7 @@ The following features are planned for future versions:
 
 ## Getting Started
 
-To get started with the development of Dessa, you will need Python 3.10 or later.
+To get started with the development of Dessa, you will need Python 3.10 or later and `uv`.
 
 1.  **Clone the repository:**
     ```sh
@@ -36,10 +36,10 @@ To get started with the development of Dessa, you will need Python 3.10 or later
     cd dessa
     ```
 
-2.  **Set up a virtual environment (recommended):**
+2.  **Create and activate the virtual environment:**
     ```sh
-    python3 -m venv venv
-    source venv/bin/activate
+    uv venv
+    source .venv/bin/activate
     ```
 
 ## Usage
@@ -47,7 +47,7 @@ To get started with the development of Dessa, you will need Python 3.10 or later
 Once the REPL is implemented, you will be able to run it with the following command:
 
 ```sh
-python3 -m dessa.repl
+python -m dessa.repl
 ```
 
 ## Testing
@@ -55,7 +55,7 @@ python3 -m dessa.repl
 To run the test suite, use the following command:
 
 ```sh
-python3 -m unittest discover tests
+python -m unittest discover tests
 ```
 
 ## Contributing
