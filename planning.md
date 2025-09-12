@@ -32,4 +32,25 @@ To keep the initial scope focused, the first version of "dessa" will include:
 *   **Expressions:**
     *   Integer arithmetic: `+`, `-`, `*`, `/`.
     *   Boolean comparisons: `<`, `>`, `==`, `!=`.
-*   **Control Flow:** `if/else` expressions.
+*   **Control Flow:** `if/else` expressions. Block statements will be enclosed in curly braces `{ ... }`.
+
+## Future Features (Post-V1)
+
+Once the core feature set is complete and tested, we can extend "dessa" with more powerful capabilities.
+
+*   **Functions:**
+    *   **First-class functions:** Treat functions as values that can be assigned to variables and passed to other functions.
+    *   **Syntax:** Define function literals with the `fn` keyword, followed by parameters and a block statement body. Example: `let add = fn(x, y) { x + y; };`
+    *   **Closures:** Ensure functions carry their enclosing environment with them.
+
+*   **String Data Type:**
+    *   **Syntax:** Support for double-quoted string literals. Example: `let name = "Dessa";`
+    *   **Operations:** Plan for basic operations like concatenation.
+
+*   **Array Data Type:**
+    *   **Syntax:** Support for array literals with comma-separated values. Example: `let my_array = [1, "two", fn(x){x*x}];`
+    *   **Operations:** Support for element access via index. Example: `my_array[0]`.
+
+*   **Hash Map Data Type:**
+    *   **Syntax:** Support for hash literals with key-value pairs. Example: `let my_hash = {"name": "Dessa", "age": 5};`
+    *   **Operations:** Support for element access via key. Example: `my_hash["name"]`.
