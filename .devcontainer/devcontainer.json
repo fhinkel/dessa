@@ -22,10 +22,11 @@
   },
 
   "features": {
-    "ghcr.io/devcontainers/features/git:1": {}
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/node:1": {}
   },
 
-  "postCreateCommand": "pip install --upgrade pip && pip install uv",
+  "postCreateCommand": "pip install --upgrade pip && pip install uv && npm install -g @google/gemini-cli",
 
   "forwardPorts": [],
 
