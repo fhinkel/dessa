@@ -1,0 +1,35 @@
+{
+  "name": "Dessa Programming Language",
+  "image": "mcr.microsoft.com/devcontainers/python:3.10-bookworm",
+  
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.pylint",
+        "ms-python.black-formatter",
+        "ms-toolsai.jupyter"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true,
+        "python.formatting.provider": "black",
+        "python.testing.unittestEnabled": true,
+        "python.testing.unittestArgs": ["-v", "-s", "./tests", "-p", "test*.py"]
+      }
+    }
+  },
+
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+
+  "postCreateCommand": "pip install --upgrade pip && pip install uv",
+
+  "forwardPorts": [],
+
+  "portsAttributes": {},
+
+  "remoteUser": "vscode"
+}
