@@ -6,17 +6,44 @@ Dessa is a lightweight, interpreted programming language written in Python. It i
 
 This project is currently in the initial development phase. The core components, including the lexer, parser, and evaluator, are being built.
 
-## Features (Version 1)
+## Features
 
-The first version of Dessa will include the following features:
+Dessa is a simple, dynamically-typed programming language that supports the following features:
 
-*   **Variable bindings:** `let` statements.
-*   **Data types:** Integers and Booleans.
-*   **Expressions:**
-    *   Integer arithmetic: `+`, `-`, `*`, `/`.
-    *   Boolean comparisons: `<`, `>`, `==`, `!=`.
-*   **Control Flow:** `if/else` expressions.
-*   **Functions:** First-class functions with closure support.
+*   **Variable Bindings:** Use the `let` keyword to bind values to names.
+    ```
+    let x = 5;
+    let y = x * 2;
+    ```
+
+*   **Data Types:** Integers and booleans are the core data types.
+    ```
+    let is_active = true;
+    let count = 10;
+    ```
+
+*   **Expressions:** Full support for arithmetic and boolean expressions with operator precedence.
+    *   **Arithmetic:** `+`, `-`, `*`, `/`
+    *   **Comparison:** `<`, `>`, `==`, `!=`
+    *   **Prefix Operators:** `!` (negation), `-` (negative)
+
+*   **Conditional Logic:** Use `if/else` expressions to control the flow of your code. `if` is an expression and produces a value.
+    ```
+    let result = if (x > y) { x } else { y };
+    ```
+
+*   **First-Class Functions and Closures:** Functions are first-class citizens. They can be assigned to variables, passed as arguments, and returned from other functions. They also support closures, capturing the environment in which they were created.
+    ```
+    let add = fn(x, y) {
+      return x + y;
+    };
+
+    let newAdder = fn(x) {
+      fn(y) { x + y };
+    };
+    let addTwo = newAdder(2);
+    addTwo(3); // returns 5
+    ```
 
 ## Future Features
 
@@ -44,11 +71,13 @@ To get started with the development of Dessa, you will need Python 3.10 or later
 
 ## Usage
 
-Once the REPL is implemented, you will be able to run it with the following command:
+You can start the interactive REPL (Read-Eval-Print Loop) by running the `main.py` script:
 
 ```sh
-python -m dessa.repl
+python3 main.py
 ```
+
+This will launch a prompt where you can enter and execute Dessa code.
 
 ## Testing
 
