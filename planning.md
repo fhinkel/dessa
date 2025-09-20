@@ -178,6 +178,7 @@ The language will be built in Python using a phased, test-driven approach.
 
 ## Phase 1: The Lexer (or Tokenizer) - Detailed Plan for Intern
 
+*   **Status:** Complete. The lexer is implemented and tested, including line and column number tracking.
 *   **Purpose:** To take raw source code and break it into a series of "tokens".
 
 ### 1.1. The Token Data Structure
