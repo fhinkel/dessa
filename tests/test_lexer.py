@@ -11,7 +11,7 @@ class LexerTest(unittest.TestCase):
     def test_let_statement(self):
         input_code = "let x = 5;"
         expected_tokens = [
-            Token(LET, "let", 1, 3),
+            Token(LET, "let", 1, 1),
             Token(IDENT, "x", 1, 5),
             Token(ASSIGN, "=", 1, 7),
             Token(INT, "5", 1, 9),
